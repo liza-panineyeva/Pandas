@@ -1,5 +1,5 @@
 import pandas
-"""In this method I consider that all parametrs will provided be correctly"""
+
 def group_by(stream,field,success=None):
     i = 0
     j = 5
@@ -17,6 +17,6 @@ def group_by(stream,field,success=None):
         df = df[df["Suc"] == "F"]
     ld = df.groupby( [df["Launch Date"].str[i:j]]).agg({"Launch Date":"count"})
     return ld
-"""I know that method should return a dict, but i like it that way more  :)"""
+
 print(group_by(open('launchlog.txt'),"month",success=False))
 
